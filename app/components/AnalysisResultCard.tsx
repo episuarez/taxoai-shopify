@@ -23,8 +23,8 @@ interface AnalysisData {
   metaTitle: string | null;
   metaDescription: string | null;
   optimizedDescription: string | null;
-  keywords: KeywordEntry[];
-  tags: string[];
+  keywords?: KeywordEntry[];
+  tags?: string[];
   attributes: {
     color?: string[];
     material?: string;
