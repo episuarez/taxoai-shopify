@@ -1,0 +1,162 @@
+{
+  "app": {
+    "name": "TaxoAI",
+    "description": "AI-powered product categorization and SEO optimization"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "bulkAnalyze": "Bulk Analyze",
+    "settings": "Settings"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": {
+      "heading": "Welcome to TaxoAI",
+      "description": "Get started by configuring your TaxoAI API key in Settings. TaxoAI will automatically categorize your products and generate SEO-optimized content.",
+      "action": "Configure API Key"
+    },
+    "stats": {
+      "totalAnalyzed": "Total Analyzed",
+      "productsAnalyzed": "products categorized",
+      "avgConfidence": "Average Confidence",
+      "classificationAccuracy": "classification accuracy",
+      "needsReview": "Needs Review",
+      "lowConfidenceProducts": "low confidence products"
+    },
+    "usage": {
+      "title": "Usage",
+      "plan": "Plan",
+      "productsUsed": "Products Used",
+      "percentageUsed": "Percentage Used"
+    },
+    "recentAnalyses": {
+      "title": "Recent Analyses",
+      "empty": "No products have been analyzed yet. Use Bulk Analyze to get started.",
+      "product": "Product",
+      "category": "Category",
+      "confidence": "Confidence",
+      "date": "Date"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "saved": "Settings saved successfully",
+    "saveError": "Error saving settings",
+    "save": "Save",
+    "api": {
+      "title": "API Configuration",
+      "description": "Enter your TaxoAI API key to enable product analysis. You can obtain a key from the TaxoAI dashboard.",
+      "apiKey": "API Key",
+      "apiKeyHelp": "Your TaxoAI API key. The key will be validated when you save.",
+      "language": "Language",
+      "languageHelp": "Language for product analysis and SEO content generation.",
+      "languages": {
+        "en": "English",
+        "es": "Spanish",
+        "pt": "Portuguese"
+      }
+    },
+    "behavior": {
+      "title": "Analysis Behavior",
+      "description": "Configure when and how products are analyzed.",
+      "autoAnalyze": "Auto-analyze new products",
+      "autoAnalyzeHelp": "Automatically analyze products when they are created or updated.",
+      "confidenceThreshold": "Confidence Threshold",
+      "confidenceThresholdHelp": "Only apply changes automatically when confidence is at or above this threshold.",
+      "analyzeImages": "Analyze product images",
+      "analyzeImagesHelp": "Use AI to analyze product images for colors, materials, and style. This may use additional API credits."
+    },
+    "content": {
+      "title": "Content Updates",
+      "description": "Choose what product fields TaxoAI should update with optimized content.",
+      "updateTitle": "Update product title",
+      "updateTitleHelp": "Replace the product title with the SEO-optimized version from TaxoAI.",
+      "updateDescription": "Update product description",
+      "updateDescriptionHelp": "Replace the product description with the SEO-optimized version from TaxoAI.",
+      "alwaysUpdated": "SEO meta title and meta description are always updated. Tags are added without overwriting existing ones. Google category and product attributes are always written as metafields."
+    }
+  },
+  "product": {
+    "notFound": "Product not found",
+    "notFoundMessage": "The product with ID {{id}} could not be found in your store.",
+    "analyze": "Analyze",
+    "analyzing": "Analyzing...",
+    "analyzeNow": "Analyze Now",
+    "notAnalyzed": "This product has not been analyzed yet.",
+    "analysisComplete": "Product has been analyzed and updated successfully.",
+    "analysisError": "Analysis Error",
+    "apiKeyRequired": "API key required",
+    "apiKeyRequiredMessage": "Configure your TaxoAI API key in Settings to analyze products.",
+    "manualOverride": {
+      "title": "Manual Category Override",
+      "description": "Search for a Google Product Taxonomy category to manually assign to this product."
+    }
+  },
+  "analysis": {
+    "classification": "Classification",
+    "googleCategory": "Google Category",
+    "notClassified": "Not classified",
+    "categoryId": "Category ID",
+    "seoPreview": "SEO Preview",
+    "metaTitle": "Meta Title",
+    "metaDescription": "Meta Description",
+    "optimizedTitle": "Optimized Title",
+    "optimizedDescription": "Optimized Description",
+    "keywords": "Keywords",
+    "suggestedTags": "Suggested Tags",
+    "productAttributes": "Product Attributes",
+    "colors": "Colors",
+    "material": "Material",
+    "gender": "Gender",
+    "style": "Style",
+    "imageAnalysis": "Image Analysis",
+    "detectedColors": "Detected Colors",
+    "detectedMaterial": "Detected Material",
+    "detectedStyle": "Detected Style",
+    "backgroundQuality": "Background Quality",
+    "analyzedOn": "Analyzed on"
+  },
+  "bulk": {
+    "title": "Bulk Analyze",
+    "filter": "Filter",
+    "allProducts": "All products",
+    "unanalyzed": "Unanalyzed",
+    "lowConfidence": "Low confidence",
+    "analyzeSelected": "Analyze Selected",
+    "inProgress": "Batch Analysis in Progress",
+    "processing": "Processing... This may take a few minutes for large batches.",
+    "complete": "Batch analysis complete",
+    "completeMessage": "All {{count}} products have been analyzed and updated.",
+    "failed": "Batch analysis failed",
+    "failedMessage": "The batch job encountered an error. Please try again.",
+    "noProducts": "No products selected",
+    "product": "product",
+    "products": "products",
+    "image": "Image",
+    "type": "Type",
+    "status": "Status",
+    "analyzed": "Analyzed",
+    "notAnalyzed": "Not Analyzed"
+  },
+  "usage": {
+    "limitReached": "Usage limit reached",
+    "limitReachedMessage": "You have used {{used}} of {{limit}} products this month. Upgrade your plan to continue analyzing products.",
+    "approaching": "Approaching usage limit",
+    "approachingMessage": "You have used {{used}} of {{limit}} products this month ({{percentage}}%).",
+    "upgrade": "Upgrade Plan",
+    "productsUsed": "products used this month"
+  },
+  "status": {
+    "analyzed": "Analyzed",
+    "pending": "Pending",
+    "lowConfidence": "Low Confidence",
+    "failed": "Failed"
+  },
+  "confidence": {
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low",
+    "veryLow": "Very Low",
+    "unknown": "Unknown"
+  }
+}

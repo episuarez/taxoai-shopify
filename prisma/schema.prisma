@@ -1,0 +1,70 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Session {
+  id          String    @id
+  shop        String
+  state       String
+  isOnline    Boolean   @default(false)
+  scope       String?
+  expires     DateTime?
+  accessToken String?
+  userId      BigInt?
+
+  @@index([shop])
+}
+
+model ShopSettings {
+  id                    String   @id @default(cuid())
+  shop                  String   @unique
+  apiKey                String   @default("")
+  language              String   @default("en")
+  autoAnalyze           Boolean  @default(true)
+  confidenceThreshold   Float    @default(0.7)
+  analyzeImages         Boolean  @default(false)
+  updateTitle           Boolean  @default(false)
+  updateDescription     Boolean  @default(false)
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+}
+
+model ProductAnalysis {
+  id                   String   @id @default(cuid())
+  shop                 String
+  shopifyProductId     String
+  googleCategory       String?
+  googleCategoryId     Int?
+  confidence           Float?
+  seoTitle             String?
+  metaTitle            String?
+  metaDescription      String?
+  optimizedDescription String?
+  keywords             String?  // JSON string
+  tags                 String?  // JSON string
+  attributes           String?  // JSON string
+  imageAnalysis        String?  // JSON string
+  rawResponse          String?
+  analyzedAt           DateTime @default(now())
+
+  @@unique([shop, shopifyProductId])
+  @@index([shop])
+  @@index([shopifyProductId])
+}
+
+model Usage {
+  id        String   @id @default(cuid())
+  shop      String
+  month     String   // Format: "YYYY-MM"
+  count     Int      @default(0)
+  cachedTier String?
+  cachedAt  DateTime?
+
+  @@unique([shop, month])
+  @@index([shop])
+}

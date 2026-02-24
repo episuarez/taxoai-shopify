@@ -1,0 +1,162 @@
+{
+  "app": {
+    "name": "TaxoAI",
+    "description": "Categorizacion de productos y optimizacion SEO con IA"
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "bulkAnalyze": "Analisis Masivo",
+    "settings": "Configuracion"
+  },
+  "dashboard": {
+    "title": "Panel",
+    "welcome": {
+      "heading": "Bienvenido a TaxoAI",
+      "description": "Comienza configurando tu clave API de TaxoAI en Configuracion. TaxoAI categorizara automaticamente tus productos y generara contenido SEO optimizado.",
+      "action": "Configurar Clave API"
+    },
+    "stats": {
+      "totalAnalyzed": "Total Analizados",
+      "productsAnalyzed": "productos categorizados",
+      "avgConfidence": "Confianza Promedio",
+      "classificationAccuracy": "precision de clasificacion",
+      "needsReview": "Necesitan Revision",
+      "lowConfidenceProducts": "productos con baja confianza"
+    },
+    "usage": {
+      "title": "Uso",
+      "plan": "Plan",
+      "productsUsed": "Productos Usados",
+      "percentageUsed": "Porcentaje Usado"
+    },
+    "recentAnalyses": {
+      "title": "Analisis Recientes",
+      "empty": "Aun no se han analizado productos. Usa Analisis Masivo para comenzar.",
+      "product": "Producto",
+      "category": "Categoria",
+      "confidence": "Confianza",
+      "date": "Fecha"
+    }
+  },
+  "settings": {
+    "title": "Configuracion",
+    "saved": "Configuracion guardada exitosamente",
+    "saveError": "Error al guardar la configuracion",
+    "save": "Guardar",
+    "api": {
+      "title": "Configuracion de API",
+      "description": "Ingresa tu clave API de TaxoAI para habilitar el analisis de productos. Puedes obtener una clave desde el panel de TaxoAI.",
+      "apiKey": "Clave API",
+      "apiKeyHelp": "Tu clave API de TaxoAI. La clave se validara al guardar.",
+      "language": "Idioma",
+      "languageHelp": "Idioma para el analisis de productos y la generacion de contenido SEO.",
+      "languages": {
+        "en": "Ingles",
+        "es": "Espanol",
+        "pt": "Portugues"
+      }
+    },
+    "behavior": {
+      "title": "Comportamiento del Analisis",
+      "description": "Configura cuando y como se analizan los productos.",
+      "autoAnalyze": "Auto-analizar productos nuevos",
+      "autoAnalyzeHelp": "Analizar automaticamente los productos cuando se crean o actualizan.",
+      "confidenceThreshold": "Umbral de Confianza",
+      "confidenceThresholdHelp": "Solo aplicar cambios automaticamente cuando la confianza alcance o supere este umbral.",
+      "analyzeImages": "Analizar imagenes de productos",
+      "analyzeImagesHelp": "Usar IA para analizar imagenes de productos en busca de colores, materiales y estilo. Esto puede usar creditos API adicionales."
+    },
+    "content": {
+      "title": "Actualizaciones de Contenido",
+      "description": "Elige que campos del producto TaxoAI debe actualizar con contenido optimizado.",
+      "updateTitle": "Actualizar titulo del producto",
+      "updateTitleHelp": "Reemplazar el titulo del producto con la version optimizada para SEO de TaxoAI.",
+      "updateDescription": "Actualizar descripcion del producto",
+      "updateDescriptionHelp": "Reemplazar la descripcion del producto con la version optimizada para SEO de TaxoAI.",
+      "alwaysUpdated": "El meta titulo y meta descripcion SEO siempre se actualizan. Las etiquetas se agregan sin sobrescribir las existentes. La categoria de Google y los atributos del producto siempre se escriben como metafields."
+    }
+  },
+  "product": {
+    "notFound": "Producto no encontrado",
+    "notFoundMessage": "El producto con ID {{id}} no se pudo encontrar en tu tienda.",
+    "analyze": "Analizar",
+    "analyzing": "Analizando...",
+    "analyzeNow": "Analizar Ahora",
+    "notAnalyzed": "Este producto aun no ha sido analizado.",
+    "analysisComplete": "El producto ha sido analizado y actualizado exitosamente.",
+    "analysisError": "Error de Analisis",
+    "apiKeyRequired": "Clave API requerida",
+    "apiKeyRequiredMessage": "Configura tu clave API de TaxoAI en Configuracion para analizar productos.",
+    "manualOverride": {
+      "title": "Asignacion Manual de Categoria",
+      "description": "Busca una categoria de la Taxonomia de Productos de Google para asignar manualmente a este producto."
+    }
+  },
+  "analysis": {
+    "classification": "Clasificacion",
+    "googleCategory": "Categoria de Google",
+    "notClassified": "Sin clasificar",
+    "categoryId": "ID de Categoria",
+    "seoPreview": "Vista Previa SEO",
+    "metaTitle": "Meta Titulo",
+    "metaDescription": "Meta Descripcion",
+    "optimizedTitle": "Titulo Optimizado",
+    "optimizedDescription": "Descripcion Optimizada",
+    "keywords": "Palabras Clave",
+    "suggestedTags": "Etiquetas Sugeridas",
+    "productAttributes": "Atributos del Producto",
+    "colors": "Colores",
+    "material": "Material",
+    "gender": "Genero",
+    "style": "Estilo",
+    "imageAnalysis": "Analisis de Imagenes",
+    "detectedColors": "Colores Detectados",
+    "detectedMaterial": "Material Detectado",
+    "detectedStyle": "Estilo Detectado",
+    "backgroundQuality": "Calidad del Fondo",
+    "analyzedOn": "Analizado el"
+  },
+  "bulk": {
+    "title": "Analisis Masivo",
+    "filter": "Filtro",
+    "allProducts": "Todos los productos",
+    "unanalyzed": "Sin analizar",
+    "lowConfidence": "Baja confianza",
+    "analyzeSelected": "Analizar Seleccionados",
+    "inProgress": "Analisis Masivo en Progreso",
+    "processing": "Procesando... Esto puede tomar unos minutos para lotes grandes.",
+    "complete": "Analisis masivo completado",
+    "completeMessage": "Los {{count}} productos han sido analizados y actualizados.",
+    "failed": "Analisis masivo fallido",
+    "failedMessage": "El trabajo encontro un error. Por favor intenta de nuevo.",
+    "noProducts": "No hay productos seleccionados",
+    "product": "producto",
+    "products": "productos",
+    "image": "Imagen",
+    "type": "Tipo",
+    "status": "Estado",
+    "analyzed": "Analizado",
+    "notAnalyzed": "Sin Analizar"
+  },
+  "usage": {
+    "limitReached": "Limite de uso alcanzado",
+    "limitReachedMessage": "Has usado {{used}} de {{limit}} productos este mes. Mejora tu plan para continuar analizando productos.",
+    "approaching": "Acercandote al limite de uso",
+    "approachingMessage": "Has usado {{used}} de {{limit}} productos este mes ({{percentage}}%).",
+    "upgrade": "Mejorar Plan",
+    "productsUsed": "productos usados este mes"
+  },
+  "status": {
+    "analyzed": "Analizado",
+    "pending": "Pendiente",
+    "lowConfidence": "Baja Confianza",
+    "failed": "Fallido"
+  },
+  "confidence": {
+    "high": "Alta",
+    "medium": "Media",
+    "low": "Baja",
+    "veryLow": "Muy Baja",
+    "unknown": "Desconocida"
+  }
+}
