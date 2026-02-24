@@ -56,12 +56,13 @@ jobs:
 
       - name: Package release
         run: |
-          tar -czf taxoai-shopify-${{ steps.version.outputs.version }}.tar.gz \
+          tar -czf /tmp/taxoai-shopify-${{ steps.version.outputs.version }}.tar.gz \
             --exclude=node_modules \
             --exclude=.github \
             --exclude=tests \
             --exclude=.git \
             .
+          mv /tmp/taxoai-shopify-${{ steps.version.outputs.version }}.tar.gz .
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
