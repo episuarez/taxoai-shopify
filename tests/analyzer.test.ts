@@ -151,6 +151,7 @@ describe("analyzer", () => {
       ],
       language: "en",
       analyze_images: false,
+      product_id: "12345",
     });
   });
 

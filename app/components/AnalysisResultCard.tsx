@@ -16,31 +16,31 @@ interface KeywordEntry {
 }
 
 interface AnalysisData {
-  googleCategory: string | null;
-  googleCategoryId: number | null;
-  confidence: number | null;
-  seoTitle: string | null;
-  metaTitle: string | null;
-  metaDescription: string | null;
-  optimizedDescription: string | null;
+  googleCategory?: string | null;
+  googleCategoryId?: number | null;
+  confidence?: number | null;
+  seoTitle?: string | null;
+  metaTitle?: string | null;
+  metaDescription?: string | null;
+  optimizedDescription?: string | null;
   keywords?: KeywordEntry[];
   tags?: string[];
-  attributes: {
+  attributes?: {
     color?: string[];
     material?: string;
     gender?: string;
     style?: string;
     extra?: Record<string, unknown>;
   } | null;
-  imageAnalysis: {
+  imageAnalysis?: {
     detected_colors?: string[];
     detected_material?: string;
     detected_style?: string;
     background_quality?: string;
   } | null;
-  processingTimeMs: number | null;
-  cached: boolean | null;
-  analyzedAt: string;
+  processingTimeMs?: number | null;
+  cached?: boolean | null;
+  analyzedAt?: string;
 }
 
 interface AnalysisResultCardProps {
@@ -59,7 +59,7 @@ export function AnalysisResultCard({ analysis }: AnalysisResultCardProps) {
             <Text as="h2" variant="headingMd">
               Classification
             </Text>
-            {analysis.confidence !== null && (
+            {analysis.confidence != null && (
               <Badge tone={confidenceTone}>
                 {`${(analysis.confidence * 100).toFixed(0)}% confidence`}
               </Badge>
@@ -309,9 +309,9 @@ export function AnalysisResultCard({ analysis }: AnalysisResultCardProps) {
         <InlineStack gap="300" wrap>
           <Text as="p" variant="bodySm" tone="subdued">
             Analyzed on{" "}
-            {new Date(analysis.analyzedAt).toLocaleString()}
+            {analysis.analyzedAt ? new Date(analysis.analyzedAt).toLocaleString() : "Unknown"}
           </Text>
-          {analysis.processingTimeMs !== null && (
+          {analysis.processingTimeMs != null && (
             <Text as="p" variant="bodySm" tone="subdued">
               {analysis.processingTimeMs}ms
             </Text>
@@ -326,9 +326,9 @@ export function AnalysisResultCard({ analysis }: AnalysisResultCardProps) {
 }
 
 function getConfidenceTone(
-  confidence: number | null,
+  confidence: number | null | undefined,
 ): "success" | "info" | "warning" | "critical" {
-  if (confidence === null) return "info";
+  if (confidence == null) return "info";
   if (confidence >= 0.85) return "success";
   if (confidence >= 0.7) return "info";
   if (confidence >= 0.5) return "warning";
