@@ -26,14 +26,14 @@ export function ProductStatusBadge({
   if (confidence >= 0.7) {
     return (
       <Badge tone="success">
-        Analyzed ({(confidence * 100).toFixed(0)}%)
+        {`Analyzed (${(confidence * 100).toFixed(0)}%)`}
       </Badge>
     );
   }
 
   return (
     <Badge tone="warning">
-      Low Confidence ({(confidence * 100).toFixed(0)}%)
+      {`Low Confidence (${(confidence * 100).toFixed(0)}%)`}
     </Badge>
   );
 }

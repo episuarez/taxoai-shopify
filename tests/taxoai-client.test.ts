@@ -56,7 +56,7 @@ describe("TaxoAIClient", () => {
           meta_title: "Red Cotton Dress | Shop Now",
           meta_description: "Beautiful red cotton dress for women.",
           optimized_description: "<p>Beautiful red cotton dress.</p>",
-          keywords: [{ keyword: "red dress", volume: 1200 }],
+          keywords: [{ keyword: "red dress", volume: "high" }],
           tags: ["dress", "red", "cotton"],
         },
         usage: {
@@ -118,8 +118,8 @@ describe("TaxoAIClient", () => {
           meta_description: "High-performance silver laptop.",
           optimized_description: "<p>High-performance laptop.</p>",
           keywords: [
-            { keyword: "laptop", volume: 50000 },
-            { keyword: "silver laptop", volume: 3000 },
+            { keyword: "laptop", volume: "high" },
+            { keyword: "silver laptop", volume: "medium" },
           ],
           tags: ["laptop", "electronics", "computer"],
         },

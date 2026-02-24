@@ -1,10 +1,5 @@
 import type { SEOResult } from "./taxoai-client";
-
-interface AdminGraphQL {
-  (query: string, options?: { variables?: Record<string, unknown> }): Promise<{
-    json: () => Promise<Record<string, unknown>>;
-  }>;
-}
+import type { AdminGraphQL } from "./constants";
 
 interface SEOSettings {
   updateTitle: boolean;

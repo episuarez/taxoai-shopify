@@ -61,7 +61,7 @@ export function AnalysisResultCard({ analysis }: AnalysisResultCardProps) {
             </Text>
             {analysis.confidence !== null && (
               <Badge tone={confidenceTone}>
-                {(analysis.confidence * 100).toFixed(0)}% confidence
+                {`${(analysis.confidence * 100).toFixed(0)}% confidence`}
               </Badge>
             )}
           </InlineStack>

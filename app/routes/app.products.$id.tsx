@@ -137,6 +137,8 @@ export const loader = async ({ request, params }: LoaderFunctionArgs) => {
           imageAnalysis: analysis.imageAnalysis
             ? JSON.parse(analysis.imageAnalysis)
             : null,
+          processingTimeMs: null,
+          cached: null,
           analyzedAt: analysis.analyzedAt.toISOString(),
         }
       : null,

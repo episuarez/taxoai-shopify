@@ -10,12 +10,7 @@ import { writeMetafields } from "./metafield-writer.server";
 import { mapCategory } from "./category-mapper.server";
 import { writeAttributes } from "./attribute-writer.server";
 import type { SupportedLanguage } from "./constants";
-
-interface AdminGraphQL {
-  (query: string, options?: { variables?: Record<string, unknown> }): Promise<{
-    json: () => Promise<Record<string, unknown>>;
-  }>;
-}
+import type { AdminGraphQL } from "./constants";
 
 interface ShopSettings {
   apiKey: string;

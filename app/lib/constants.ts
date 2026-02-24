@@ -18,3 +18,6 @@ export const CONFIDENCE_LEVELS = {
   MEDIUM: 0.7,
   LOW: 0.5,
 } as const;
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type AdminGraphQL = (...args: any[]) => Promise<any>;

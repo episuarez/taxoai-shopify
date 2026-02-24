@@ -113,10 +113,10 @@ export default function DashboardPage() {
 
   const confidenceBadge = (confidence: number | null) => {
     if (confidence === null) return <Badge>Unknown</Badge>;
-    if (confidence >= 0.85) return <Badge tone="success">High ({(confidence * 100).toFixed(0)}%)</Badge>;
-    if (confidence >= 0.7) return <Badge tone="info">Medium ({(confidence * 100).toFixed(0)}%)</Badge>;
-    if (confidence >= 0.5) return <Badge tone="warning">Low ({(confidence * 100).toFixed(0)}%)</Badge>;
-    return <Badge tone="critical">Very Low ({(confidence * 100).toFixed(0)}%)</Badge>;
+    if (confidence >= 0.85) return <Badge tone="success">{`High (${(confidence * 100).toFixed(0)}%)`}</Badge>;
+    if (confidence >= 0.7) return <Badge tone="info">{`Medium (${(confidence * 100).toFixed(0)}%)`}</Badge>;
+    if (confidence >= 0.5) return <Badge tone="warning">{`Low (${(confidence * 100).toFixed(0)}%)`}</Badge>;
+    return <Badge tone="critical">{`Very Low (${(confidence * 100).toFixed(0)}%)`}</Badge>;
   };
 
   const rows = recentAnalyses.map((analysis) => [

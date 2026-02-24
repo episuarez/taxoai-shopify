@@ -1,11 +1,6 @@
 import type { AnalyzeResponse } from "./taxoai-client";
 import { METAFIELD_NAMESPACE } from "./constants";
-
-interface AdminGraphQL {
-  (query: string, options?: { variables?: Record<string, unknown> }): Promise<{
-    json: () => Promise<Record<string, unknown>>;
-  }>;
-}
+import type { AdminGraphQL } from "./constants";
 
 const METAFIELDS_SET_MUTATION = `#graphql
   mutation metafieldsSet($metafields: [MetafieldsSetInput!]!) {

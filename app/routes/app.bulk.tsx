@@ -503,7 +503,7 @@ export default function BulkAnalyzePage() {
                     }
                     loading={isSubmitting}
                   >
-                    Analyze Selected ({selectedResources.length})
+                    {`Analyze Selected (${selectedResources.length})`}
                   </Button>
                 )}
               </InlineStack>

@@ -13,8 +13,8 @@ describe("seo-updater", () => {
     optimized_description:
       "<p>Beautiful premium red cotton dress designed for modern women.</p>",
     keywords: [
-      { keyword: "red dress", volume: 1200 },
-      { keyword: "cotton dress", volume: 800 },
+      { keyword: "red dress", volume: "high" },
+      { keyword: "cotton dress", volume: "medium" },
     ],
     tags: ["dress", "red", "cotton", "women", "fashion"],
   };

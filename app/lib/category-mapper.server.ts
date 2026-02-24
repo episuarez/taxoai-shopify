@@ -1,8 +1,4 @@
-interface AdminGraphQL {
-  (query: string, options?: { variables?: Record<string, unknown> }): Promise<{
-    json: () => Promise<Record<string, unknown>>;
-  }>;
-}
+import type { AdminGraphQL } from "./constants";
 
 const PRODUCT_UPDATE_MUTATION = `#graphql
   mutation productUpdate($input: ProductInput!) {
