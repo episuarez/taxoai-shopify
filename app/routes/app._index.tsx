@@ -9,6 +9,7 @@ import {
   BlockStack,
   InlineStack,
   Badge,
+  Banner,
   DataTable,
   EmptyState,
   Box,
@@ -33,11 +34,12 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 
   // Get usage info
   let usageInfo = null;
+  let usageError: string | null = null;
   if (settings?.apiKey) {
     try {
       usageInfo = await getUsage(shop, settings.apiKey);
-    } catch {
-      // If usage fetch fails, show defaults
+    } catch (err) {
+      usageError = err instanceof Error ? err.message : "Failed to load usage data";
     }
   }
 
@@ -65,6 +67,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   return json({
     hasApiKey: !!settings?.apiKey,
     usageInfo,
+    usageError,
     recentAnalyses: recentAnalyses.map((a) => ({
       id: a.id,
       shopifyProductId: a.shopifyProductId,
@@ -81,7 +84,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 };
 
 export default function DashboardPage() {
-  const { hasApiKey, usageInfo, recentAnalyses, stats } =
+  const { hasApiKey, usageInfo, usageError, recentAnalyses, stats } =
     useLoaderData<typeof loader>();
 
   if (!hasApiKey) {
@@ -131,6 +134,13 @@ export default function DashboardPage() {
   return (
     <Page title="TaxoAI Dashboard">
       <Layout>
+        {usageError && (
+          <Layout.Section>
+            <Banner tone="warning" title="Usage data unavailable">
+              <p>Could not load your plan usage. Your analyses are still working normally.</p>
+            </Banner>
+          </Layout.Section>
+        )}
         {usageInfo && (
           <Layout.Section>
             <UsageBanner usage={usageInfo} />
