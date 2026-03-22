@@ -59,8 +59,8 @@ describe("usage-tracker", () => {
       const mockGetUsage = vi.fn().mockResolvedValue({
         tier: "pro",
         products_used_this_month: 50,
-        products_limit: 1000,
-        percentage_used: 5,
+        products_limit: 10000,
+        percentage_used: 0.5,
       });
 
       (TaxoAIClient as unknown as ReturnType<typeof vi.fn>).mockImplementation(

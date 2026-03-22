@@ -125,7 +125,7 @@ describe("TaxoAIClient", () => {
         },
         usage: {
           products_used_this_month: 10,
-          products_limit: 100,
+          products_limit: 10000,
           tier: "pro",
         },
       };

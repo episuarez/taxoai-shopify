@@ -185,8 +185,8 @@ describe("free-tier-security", () => {
     const mockGetUsage = vi.fn().mockResolvedValue({
       tier: "pro",
       products_used_this_month: 150,
-      products_limit: 1000,
-      percentage_used: 15,
+      products_limit: 10000,
+      percentage_used: 1.5,
     });
 
     (TaxoAIClient as unknown as ReturnType<typeof vi.fn>).mockImplementation(
@@ -205,10 +205,10 @@ describe("free-tier-security", () => {
     mockPrisma.usage.findUnique.mockResolvedValue(null);
 
     const mockGetUsage = vi.fn().mockResolvedValue({
-      tier: "enterprise",
+      tier: "agency",
       products_used_this_month: 5000,
-      products_limit: 10000,
-      percentage_used: 50,
+      products_limit: 40000,
+      percentage_used: 12.5,
     });
 
     (TaxoAIClient as unknown as ReturnType<typeof vi.fn>).mockImplementation(
